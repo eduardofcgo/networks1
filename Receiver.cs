@@ -2,12 +2,12 @@
 
 namespace server
 {
-    public class PacketReceiver
+    public class Receiver
 
     {
         private readonly Sender sender;
 
-        public PacketReceiver(Sender sender)
+        public Receiver(Sender sender)
         {
             this.sender = sender;
         }

@@ -36,9 +36,9 @@ namespace server
 
                         BinaryWriter writer = new BinaryWriter(stream);
                         Sender sender = new Sender(writer);
-                        var packetReceiver = new PacketReceiver(sender);
+                        var receiver = new Receiver(sender);
 
-                        packetReceiver.Receive(maybeErrored);
+                        receiver.Receive(maybeErrored);
                     }
 
                     client.Close();
