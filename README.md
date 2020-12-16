@@ -2,7 +2,7 @@
 
 https://esgago.s3-eu-west-1.amazonaws.com/PortableGit32.zip
 
-#### Pull project
+#### Clone project
 
 `git clone https://github.com/eduardofcgo/networks1/`
 
