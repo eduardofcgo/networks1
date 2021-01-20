@@ -16,7 +16,7 @@ namespace server
         {
             Console.Write(packet.ConvertASCII());
 
-            //Console.WriteLine(packet.convertBinaryString());
+            //Console.WriteLine(packet.ConvertBinaryString());
         }
     }
 }
