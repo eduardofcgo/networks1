@@ -1,22 +1,18 @@
-﻿using System;
-
-namespace server
+﻿namespace server
 {
     public class Receiver
 
     {
-        private readonly Sender sender;
+        private readonly Writer writer;
 
-        public Receiver(Sender sender)
+        public Receiver(Writer sender)
         {
-            this.sender = sender;
+            this.writer = sender;
         }
 
         public void Receive(Packet packet)
         {
-            Console.Write(packet.ConvertASCII());
-
-            //Console.WriteLine(packet.convertBinaryString());
+            //Console.Write(packet.ConvertASCII());
         }
     }
 }

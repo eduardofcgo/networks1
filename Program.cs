@@ -20,10 +20,16 @@ namespace server
 
                 server.Start();
 
+                Console.WriteLine("Server started at port " + port);
+
                 while (true)
                 {
                     TcpClient client = server.AcceptTcpClient();
                     NetworkStream stream = client.GetStream();
+
+                    BinaryWriter binaryWriter = new BinaryWriter(stream);
+                    Writer writer = new Writer(binaryWriter);
+                    var receiver = new Receiver(writer);
 
                     int firstByte = stream.ReadByte();
 
@@ -34,13 +40,10 @@ namespace server
                         var noisyMedium = new NoisyMedium(nerrors);
                         var maybeErrored = noisyMedium.Transmit(packet);
 
-                        BinaryWriter writer = new BinaryWriter(stream);
-                        Sender sender = new Sender(writer);
-                        var receiver = new Receiver(sender);
-
                         receiver.Receive(maybeErrored);
                     }
 
+                    binaryWriter.Close();
                     client.Close();
                 }
             }
