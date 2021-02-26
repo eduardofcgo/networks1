@@ -1,4 +1,6 @@
-﻿namespace server
+﻿using System;
+
+namespace server
 {
     public class Receiver
 
@@ -12,7 +14,7 @@
 
         public void Receive(Packet packet)
         {
-            //Console.Write(packet.ConvertASCII());
+            Console.Write(packet.ConvertASCII());
         }
     }
 }
