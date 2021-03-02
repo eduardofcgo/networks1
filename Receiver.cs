@@ -7,9 +7,9 @@ namespace server
     {
         private readonly Writer writer;
 
-        public Receiver(Writer sender)
+        public Receiver(Writer writer)
         {
-            this.writer = sender;
+            this.writer = writer;
         }
 
         public void Receive(Packet packet)
